@@ -14,7 +14,7 @@ def feature_text_func(sector_name):
     return " ".join(main)
 #----------------------------------------------
 
-word_df = pd.read_csv(r"C:\Users\HP\Desktop\datasets\flats campusX\hyderabad_properties_outliers_treated.csv")
+word_df = pd.read_csv("hyderabad_properties_outliers_treated.csv")
 # AVG PRICE PER SQFT PLOT
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -22,7 +22,7 @@ st.set_page_config(page_title="Plotting Demo")
 
 st.title('Analytics')
 st.subheader("Average Price per Sqft")
-new_df = pd.read_csv(r'C:\Users\HP\Desktop\datasets\flats campusX\data_for_viz.csv')
+new_df = pd.read_csv('data_for_viz.csv')
 group_df = new_df.groupby('sector').mean()[['price','pricepersqft','built_up_area','latitude','longitude']]
 group_df.dropna(inplace= True)
 
@@ -35,7 +35,7 @@ st.plotly_chart(fig , use_container_width=True)
 # Nearest Locations PLot
 st.header("Nearest Locations")
 
-placeslatlong = pd.read_csv(r'C:\Users\HP\Desktop\datasets\flats campusX\hyderbad_places_latlong.csv')
+placeslatlong = pd.read_csv('hyderbad_places_latlong.csv')
 
 group_df1 = group_df.reset_index(drop=False)
 
