@@ -11,7 +11,7 @@ print(sklearn.__version__)
 st.set_page_config(page_title="Viz Demo")
 
 df= pd.read_csv("datasets/df_final.csv")
-with open("datasets/pipeline.pkl",'rb') as file:
+with open("pipeline.pkl",'rb') as file:
     model = pickle.load(file)
 
 
