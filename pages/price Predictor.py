@@ -10,8 +10,8 @@ print(pd.__version__)
 print(sklearn.__version__)
 st.set_page_config(page_title="Viz Demo")
 
-df= pd.read_csv(r"C:\Users\HP\Desktop\datasets\99acres\datasets\df_final.csv")
-with open(r"C:\Users\HP\Desktop\datasets\99acres\datasets\pipeline.pkl",'rb') as file:
+df= pd.read_csv("datasets\df_final.csv")
+with open("datasets\pipeline.pkl",'rb') as file:
     model = pickle.load(file)
 
 
